@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.phonegap.PrimerPhoneG"
+    version   = "1.0.0">
+
+<name>Aplicacion PhoneG</name>
+
+<description>
+Primera app de phonegap 
+</description>
+
+<author href="https://example.com" email="comet1990@hotmail.com">
+luis I. Mendoza
+</author>
+
+</widget>
