@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Hello PhoneGap</title>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
-        <meta charset="utf-8">
-
-
+    <title>HANDICAP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link href="js/HandiPort.min.css" rel="stylesheet" type="text/css">
+    <link href="css/clases.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery.mobile.min.js" type="text/javascript"></script>
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
         <script type="text/javascript">
 
@@ -23,9 +25,24 @@
 
         </script>
     </head>
-    <body onload="onBodyLoad()">
-    <h1> Hey, it's PhoneGap!</h1>
-    <a href="test.html">IR A PAGINA PRINCIPAL</a>
-    </body>
+<body onload="onBodyLoad()">
+	<div data-role="page" id="page" data-theme="a">
+	<div data-role="header">
+		<h1>Handicap Portal</h1>
+	</div>
+	<div data-role="content">	
+		 <div class="ui-grid-a">
+      <div class="ui-block-a" id="map_canvas"><a href="gitmap.html" data-role="button" class="access">Acceso</a></div>
+      <div class="ui-block-b"><a href="jquerymobile.html" data-role="button" data-icon="forward">Button</a></div>
+    	</div>		
+	</div>
+
+    
+	<div data-role="footer" data-position="fixed">
+		<h4>Clevertech, S.A. De C.V.</h4>
+	</div>
+</div>
+  
+</body>
 </html>
 
