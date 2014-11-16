@@ -16,6 +16,7 @@
 		<script type="text/javascript" src="js/jquery.ui.map.js"></script>
 		<script type="text/javascript" src="js/jquery.ui.map.services.js"></script>
 		<script type="text/javascript" src="js/jquery.ui.map.extensions.js"></script>
+        <script type="text/javascript" src="depend.js"></script>
 
 <script type="text/jscript">
 
@@ -67,7 +68,29 @@
 			
 			$('#directions_map').live('pageshow', function() {
 				demo.add('directions_map', $('#map_canvas_1').gmap('get', 'getCurrentPosition')).load('directions_map');
-			});		
+			});	
+			
+			jQuery(function($) {
+    		var locations = {
+        'Cine': ['Cinemex Reforma', 'Cinepolis Plaza Aragon'],
+        'Restaurante': ['El campirano - roma norte  ', 'mesón puerto chico  '],
+    }
+    
+    var $locations = $('#location');
+    $('#country').change(function () {
+        var country = $(this).val(), lcns = locations[country] || [];
+        
+        var html = $.map(lcns, function(lcn){
+            return '<option value="' + lcn + '">' + lcn + '</option>'
+        }).join('');
+        $locations.html(html)
+    });
+});
+
+			$("#ejemplo2").change(function(){
+            alert($('select[id=ejemplo2]').val());
+            $('#valor2').val($(this).val());
+	});
 		</script>
 
 
@@ -76,14 +99,16 @@
 
 <body onload="onBodyLoad()"> 
 
-<div data-role="page" id="page" data-theme="a">
+<div data-role="page" id="page" data-theme="e">
 	<div data-role="header">
+      <img border="0" 
+      src="imagenes/descarga1.jpg" alt="Logo, Facebook" style="float:left;display:inline"/>
 		<h1>Handicap Portal</h1>
 	</div>
 	<div data-role="content">	
 		 <div class="ui-grid-a">
       <div class="ui-block-a" id="map_canvas"><a href="#directions_map" data-role="button" class="access">Acceso</a></div>
-      <div class="ui-block-b"><a href="#directions_map" data-role="button" data-icon="forward">Button</a></div>
+      <div class="ui-block-b"><a href="#home" data-role="button" data-icon="forward">Info.</a></div>
     	</div>		
 	</div>
 
@@ -92,7 +117,7 @@
 		<h4>Clevertech, S.A. De C.V.</h4>
 	</div>
 </div>
-<div id="directions_map" data-role="page">
+<div id="directions_map" data-role="page" data-theme="e">
 			<div data-role="header">
 				<h1>Handicap Portal</h1>
 				<a data-rel="back">Back</a>
@@ -104,13 +129,22 @@
 					<p>
 						<label for="from">Tu estas en:</label>
 						<input id="from" class="ui-bar-c" type="text" value="Ubicando..."  disabled />
-					</p>
-
-					<p>
-						<label for="to">Elije un lugar:</label>
-						<input id="to" class="ui-bar-c" type="text" value=" metro oceania" />
-
-					</p>
+					</p>	
+					<label class="page1">Tipo de Establecimeinto</label>
+					<div class="tooltips">
+    					<select id="country" name="country" placeholder="Phantasyland">
+       						 <option>Cine</option>
+        					<option>Restaurante</option>
+   						</select>
+					</div>
+						<label class="page1">Elige un lugar</label>
+					<div class="tooltips">
+    					<select id="location" name="location" placeholder="Anycity"></select>
+					</div>
+                    <label for="to">Tu iras a:</label>
+						<input id="to" class="ui-bar-c" type="text" value=" José María Iglesias 55 Tabacalera, Cuauhtémoc, D.F" />
+                        
+					
 					<a id="submit" href="#" data-role="button" data-icon="search">ir a direccion</a>
 				</div>
 
