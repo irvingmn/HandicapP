@@ -72,8 +72,10 @@
 			
 			jQuery(function($) {
     		var locations = {
+		'Seleccione una opcion':[''],
         'Cine': ['Cinemex Reforma', 'Cinepolis Plaza Aragon'],
-        'Restaurante': ['El campirano - roma norte  ', 'mesón puerto chico  '],
+        'Restaurante': [ '  ','EL CAPIRANO-ROMA NORTE    Álvaro Obregón, 21 Roma, Cuauhtémoc, D.F 06700', 
+						'MESON PUERTO CHICO    José María Iglesias 55, Tabacalera, 06030 '],
     }
     
     var $locations = $('#location');
@@ -86,11 +88,14 @@
         $locations.html(html)
     });
 });
-
-			$("#ejemplo2").change(function(){
-            alert($('select[id=ejemplo2]').val());
-            $('#valor2').val($(this).val());
+	
+	$(document).ready(function(){
+	$("#location").change(function(){
+            alert($('select[id=location]').val());
+            $('#to').val($(this).val());
 	});
+	
+});
 		</script>
 
 
@@ -102,13 +107,13 @@
 <div data-role="page" id="page" data-theme="e">
 	<div data-role="header">
       <img border="0" 
-      src="imagenes/descarga1.jpg" alt="Logo, Facebook" style="float:left;display:inline"/>
+      src="imagenes/descarga1.jpg" alt="Logo, Handicap" style="float:left;display:inline"/>
 		<h1>Handicap Portal</h1>
 	</div>
 	<div data-role="content">	
 		 <div class="ui-grid-a">
-      <div class="ui-block-a" id="map_canvas"><a href="#directions_map" data-role="button" class="access">Acceso</a></div>
-      <div class="ui-block-b"><a href="#home" data-role="button" data-icon="forward">Info.</a></div>
+      <div class="ui-block-a" id="map_canvas"><a href="#directions_map" data-role="button" class="access" >Acceso</a></div>
+      <div class="ui-block-b"><a href="#home" data-role="button" data-icon="forward" class="info">Info.</a></div>
     	</div>		
 	</div>
 
@@ -133,7 +138,9 @@
 					<label class="page1">Tipo de Establecimeinto</label>
 					<div class="tooltips">
     					<select id="country" name="country" placeholder="Phantasyland">
-       						 <option>Cine</option>
+                        
+                        	<option>Seleccione una opcion</option>
+       						 <option>Cine<Seleccione una opcion/option>
         					<option>Restaurante</option>
    						</select>
 					</div>
@@ -142,7 +149,7 @@
     					<select id="location" name="location" placeholder="Anycity"></select>
 					</div>
                     <label for="to">Tu iras a:</label>
-						<input id="to" class="ui-bar-c" type="text" value=" José María Iglesias 55 Tabacalera, Cuauhtémoc, D.F" />
+						<input id="to" class="ui-bar-c" type="text" value="" disabled/>
                         
 					
 					<a id="submit" href="#" data-role="button" data-icon="search">ir a direccion</a>

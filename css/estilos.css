@@ -12,14 +12,17 @@
 }
 
 
-#resultado{
-	
-}
 
 .access
 {
-	background-image:url(../../PhonegapSite/imagenes/descarga4.jpg);
+	background-image:url(../descarga4.jpg);
  width:80%;
  height:7em;
   display: inline-block;
+	}
+.info
+	{
+	width:80%;
+ 	height:7em;
+  	display: inline-block;
 	}
