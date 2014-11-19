@@ -72,8 +72,10 @@
 			
 			jQuery(function($) {
     		var locations = {
-		'Seleccione una opcion':[''],
-        'Cine': ['Cinemex Reforma', 'Cinepolis Plaza Aragon'],
+		'Seleccione una opcion':['  '],
+        'Cine': [ '  ', 'Cinemex Real, Colón 17, Centro, 06440 Ciudad de México, D.F., México', 
+				 'CINEPOLIS PLAZA ARAGON  Av. Hank González 120 int. 44 y 102 Rinconada de Aragón 55140'],
+				 
         'Restaurante': [ '  ','EL CAPIRANO-ROMA NORTE    Álvaro Obregón, 21 Roma, Cuauhtémoc, D.F 06700', 
 						'MESON PUERTO CHICO    José María Iglesias 55, Tabacalera, 06030 '],
     }
@@ -113,12 +115,11 @@
 	<div data-role="content">	
 		 <div class="ui-grid-a">
       <div class="ui-block-a" id="map_canvas"><a href="#directions_map" data-role="button" class="access" >Acceso</a></div>
-      <div class="ui-block-b"><a href="#home" data-role="button" data-icon="forward" class="info">Info.</a></div>
+      <div class="ui-block-b"><a href="#info" data-role="button" data-icon="forward"  data-rel="dialog" class="info">Info.</a></div>
     	</div>		
 	</div>
 
-    
-	<div data-role="footer" data-position="fixed">
+   	<div data-role="footer" data-position="fixed">
 		<h4>Clevertech, S.A. De C.V.</h4>
 	</div>
 </div>
@@ -152,7 +153,7 @@
 						<input id="to" class="ui-bar-c" type="text" value="" disabled/>
                         
 					
-					<a id="submit" href="#" data-role="button" data-icon="search">ir a direccion</a>
+					<a id="submit" href="#" data-role="button" data-icon="search">ir a dirección</a>
 				</div>
 
 				<div id="results" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="display:none;">
@@ -163,7 +164,30 @@
 
 			</div>
 		</div>
-
+<div data-role="page" id="info" data-theme="e">
+        	<div data-role="header">
+            	<h1>Informacion</h1>
+            </div>
+            <div data-role="content">
+              <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                  <h3>App</h3>
+                  Nombre : Hnadicap Portal<br>
+                  Version: 1.0.0<br>
+                  Desarolladores:<ul><li> Luis Mendoza (comet1990@hotmail.com)</li>
+                  				<li> Patricia Loeza (blue.happy2518@gmail.com)</li></ul>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                  <h3>Informacion de la Empresa</h3>
+                  	<p>Clevertech S.A. de C.V.</p>
+					Av. Paseo de la reforma N°389
+ 					Piso 10 col. Cuauhtémoc cp.6500<br>
+   					Tel. (52) 55 5353 5339 
+					</p>
+                </div>
+              </div>
+         	</div> 
+</div>
 </body>
 </html>
 
