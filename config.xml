@@ -3,6 +3,7 @@
     xmlns:gap = "http://phonegap.com/ns/1.0"
     id        = "com.phonegap.PrimerPhoneG"
     version   = "1.0.0">
+<feature name=”http://api.phonegap.com/1.0/geolocation”/>
 
 <name>Handicap Portal   </name>
 
@@ -14,5 +15,5 @@ Final
 Luis I. Mendoza
 </author>
 <icon src="ASL2.png" />
-<feature name=”http://api.phonegap.com/1.0/geolocation”/> 
+ 
 </widget>
